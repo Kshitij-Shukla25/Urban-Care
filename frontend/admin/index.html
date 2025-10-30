@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UrbanCare - Admin Dashboard</title>
-    <link rel="stylesheet" href="style.css"> 
+    <link rel="stylesheet" href="dashboard.css"> 
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
@@ -13,14 +13,13 @@
 <body>
     <header class="navbar">
         <div class="container">
-            <div class="logo">
-                UrbanCare Admin
-            </div>
+            <div class="logo">UrbanCare Admin</div>
             <nav class="nav-links">
                 <ul>
                     <li><a href="index.html" class="active-link">Dashboard</a></li>
                     <li><a href="pending_issues.html">Pending Issues</a></li>
-                    <li><a href="resolved_issues.html">Resolved Issues</a></li> <li><a href="locations.html">Locations</a></li>
+                    <li><a href="resolved_issues.html">Resolved Issues</a></li> 
+                    <li><a href="locations.html">Locations</a></li>
                     <li><a href="reports.html">Reports</a></li>
                 </ul>
             </nav>
@@ -41,15 +40,15 @@
             </div>
             <div class="stats-overview">
                 <div class="stat-card">
-                    <h3>250</h3>
+                    <h3 id="pending-count">250</h3>
                     <p>Total Pending Issues</p>
                 </div>
                 <div class="stat-card">
-                    <h3>1200</h3>
+                    <h3 id="resolved-count">1200</h3>
                     <p>Total Resolved Issues</p>
                 </div>
                 <div class="stat-card">
-                    <h3>45</h3>
+                    <h3 id="active-locations-count">45</h3>
                     <p>Active Locations</p>
                 </div>
             </div>
@@ -76,28 +75,44 @@
             
             <h2 style="margin-top: 40px;">Recent Activity</h2>
             <div class="issue-list">
-                <div class="issue-card pending">
-                    <h3>Pothole on Main Street</h3>
-                    <p><strong>Location:</strong> Downtown</p>
-                    <p><strong>Status:</strong> Pending</p>
-                    <p><strong>Reported:</strong> 2 days ago</p>
-                    <button class="btn resolve-btn">Mark as Resolved</button>
-                    <button class="btn view-details">View Details</button>
                 </div>
-                <div class="issue-card resolved">
-                    <h3>Broken Streetlight - Elm Ave</h3>
-                    <p><strong>Location:</strong> North Side</p>
-                    <p><strong>Status:</strong> Resolved</p>
-                    <p><strong>Resolved By:</strong> Public Works Dept.</p>
-                    <button class="btn view-details">View Details</button>
-                </div>
-            </div>
+            
             <div class="view-all">
                 <a href="pending_issues.html">View All Pending Issues <span class="arrow">&rarr;</span></a>
             </div>
         </div>
     </section>
 
+    <section class="impact showcase">
+        <div class="container">
+            <h2 class="animate-on-scroll fade-in-up">Explore Our Impact</h2>
+            <p class="animate-on-scroll fade-in-up delay-1">See how UrbanCare is transforming communities.</p>
+
+            <div class="animated-grid">
+                <div class="hh2">
+                    <img src="static/cleanpark.png" alt="Clean City Park">
+                    <div class="box-overlay">
+                        <h3>Clean Parks Initiative</h3>
+                        <p>Our efforts resulted in 20+ revitalized parks.</p>
+                    </div>
+                </div>
+                <div class="hh2">
+                    <img src="static/pothholeredemption.png" alt="Street Repair">
+                    <div class="box-overlay">
+                        <h3>Pothole Remediation</h3>
+                        <p>Over 1000 potholes fixed across the city.</p>
+                    </div>
+                </div>
+                <div class="hh2">
+                    <img src="static/greencity.png" alt="Community Tree Planting">
+                    <div class="box-overlay">
+                        <h3>Green City Project</h3>
+                        <p>Engaging citizens in tree planting for a greener tomorrow.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <footer>
         <div class="container">
             <p>&copy; 2023 UrbanCare. All rights reserved.</p>
@@ -107,22 +122,6 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20n6a32H62+4wI4sXhQd9hYf8u8e34B7yT8tXqjD4p4="
      crossorigin=""></script>
-    <script>
-        // MAP COORDINATES UPDATED TO NEW DELHI, INDIA
-        var map = L.map('mapid').setView([28.6139, 77.2090], 12); 
-
-        // Add the tileset (OpenStreetMap)
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            maxZoom: 19,
-            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
-
-        // Example Markers (Updated to be near Delhi area)
-        L.marker([28.62, 77.21]).addTo(map) // Central Delhi
-            .bindPopup("<b>Pothole Main St.</b><br>Priority: High (250 Upvotes)").openPopup();
-
-        L.marker([28.6, 77.19]).addTo(map) // South Delhi area
-            .bindPopup("<b>Broken Streetlight</b><br>Priority: Medium (50 Upvotes)");
-    </script>
+    <script src="dashboard.js"></script> 
 </body>
 </html>
