@@ -1,0 +1,29 @@
+<!-- Profile HTML -->
+<!-- src/user/profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Your Profile — CivicSolve</title>
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+  <nav>
+    <span>CivicSolve</span>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="history.html">My Reports</a>
+  </nav>
+  <section class="profile-section">
+    <h1>My Profile</h1>
+    <div id="profileForm">
+      <label>Name: <input type="text" value="Abhijeet"></label>
+      <label>Email: <input type="email" value="user@email.com" disabled></label>
+      <label>Phone: <input type="tel" value=""></label>
+      <label>Address: <input type="text" value=""></label>
+      <button id="saveProfile">Save Changes</button>
+      <div id="saveMsg"></div>
+    </div>
+  </section>
+  <script src="profile.js"></script>
+</body>
+</html>

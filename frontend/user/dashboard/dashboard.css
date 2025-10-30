@@ -1,0 +1,45 @@
+/* Dashboard CSS */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  background: linear-gradient(130deg, #56cfe1 70%, #fff 100%);
+  margin: 0;
+}
+nav {
+  display: flex;
+  background: #2f80ed;
+  color: #fff;
+  padding: 1rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+}
+nav a {
+  color: #ffe082;
+  text-decoration: none;
+  margin-left: 2rem;
+  font-weight: bold;
+}
+.dashboard {
+  text-align: center;
+  margin-top: 2rem;
+}
+.quick-actions button {
+  background: #ffbe0b;
+  border: none;
+  border-radius: 30px;
+  margin: 1rem;
+  padding: 0.8rem 2.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 14px #3332;
+  transition: background 0.18s;
+}
+.quick-actions button:hover { background: #ff9f1c; }
+#stats {
+  margin-top: 2.5rem;
+  background: #fff;
+  border-radius: 10px;
+  padding: 1.2rem 2rem;
+  box-shadow: 0 2px 12px #2f80ed22;
+  display: inline-block;
+}

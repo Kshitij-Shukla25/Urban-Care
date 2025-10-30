@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CivicSolve - Empower Your City</title>
+  <link rel="stylesheet" href="landing.css">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline';">
+</head>
+<body>
+  <div class="landing">
+    <header>
+      <h1>CivicSolve</h1>
+      <p class="tagline">Empowering Citizens. Enabling Efficient Cities.</p>
+    </header>
+    <main>
+      <div class="hero-content">
+        <img src="https://cdn-icons-png.flaticon.com/512/2917/2917990.png" 
+             alt="City Engagement" class="hero-img"> <!-- Use your own image -->
+        <h2>Report, Track, Solve.</h2>
+        <p>
+          Submit civic
+          Real-time dashboard and AI routing for fast, transparent resolutions.
+        </p>
+      </div>
+      <button id="getStartedBtn" class="get-started-btn">Get Started</button>
+    </main>
+    <footer>
+      <span>© 2025 CivicSolve | Empowering smarter cities</span>
+    </footer>
+
+    <!-- Modal -->
+    <div id="userTypeModal" class="modal">
+      <div class="modal-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h3>Continue As:</h3>
+        <button class="user-type-btn" id="userBtn">User</button>
+        <button class="user-type-btn" id="adminBtn">Admin/Authority</button>
+      </div>
+    </div>
+  </div>
+  <script src="landing.js"></script>
+</body>
+</html>

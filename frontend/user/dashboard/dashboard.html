@@ -1,0 +1,29 @@
+<!-- Dashboard HTML -->
+<!-- src/user/dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CivicSolve — User Dashboard</title>
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <nav>
+    <span>CivicSolve</span>
+    <a href="profile.html">Profile</a>
+    <a href="history.html">My Reports</a>
+  </nav>
+  <section class="dashboard">
+    <h1>Welcome, [Username]</h1>
+    <div class="quick-actions">
+      <button onclick="window.location.href='report.html'">Report an Issue</button>
+      <button onclick="window.location.href='history.html'">View Issue History</button>
+      <button onclick="window.location.href='profile.html'">Edit Profile</button>
+    </div>
+    <div id="stats">
+      <!-- JS fills in stats: e.g., open reports, closed, avg response time -->
+    </div>
+  </section>
+  <script src="dashboard.js"></script>
+</body>
+</html>

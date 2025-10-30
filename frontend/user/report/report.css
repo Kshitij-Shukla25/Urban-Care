@@ -1,0 +1,12 @@
+/* Report CSS */
+body { font-family:'Poppins',Arial,sans-serif; background:linear-gradient(100deg,#ffbe0b 70%,#ffe082 100%);}
+nav { display:flex; background:#2f80ed; color:#fff; padding:1rem 2rem; justify-content:space-between; align-items:center;}
+nav a { color:#ffe082; text-decoration:none; margin-left:2rem; font-weight:bold;}
+.report-form { max-width:470px; background:#fff; padding:2rem; border-radius:18px; margin:2.5rem auto; box-shadow:0 6px 18px #2f80ed33;}
+.report-form h1 { color:#2f80ed; margin-bottom:1.6rem;}
+label { display:block; margin-top:1.1rem; font-weight:500;}
+textarea, select, input[type="file"] { width:100%; margin-top:7px;}
+#imgPreview img { width:130px; margin-top:10px; border-radius:9px; box-shadow:0 2px 12px #56cfe188;}
+button[type="submit"] { background:#2f80ed; color:#fff; font-size:1.2rem; border:none; border-radius:14px; padding:0.7rem 2.1rem; margin-top:2.2rem; cursor:pointer; font-weight:bold;}
+button:hover { background:#56cfe1; }
+#confirmation { margin-top:20px; color:green; font-weight:bold;}

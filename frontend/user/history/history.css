@@ -1,0 +1,10 @@
+/* History CSS */
+body { font-family:'Poppins',Arial,sans-serif; background:linear-gradient(120deg,#56cfe1 70%,#fff 100%);}
+nav { display:flex; background:#2f80ed;color:#fff;padding:1rem 2rem;justify-content:space-between;}
+nav a{color:#ffe082;text-decoration:none;margin-left:2rem;font-weight:bold;}
+.history-section{max-width:700px;background:#fff;padding:2rem 2.5rem;border-radius:20px;margin:2rem auto;box-shadow:0 6px 36px #2f80ed22;}
+.history-section h1 { color:#2f80ed;margin-bottom:1.5rem;}
+table{width:100%;border-collapse:collapse;}
+th,td{padding:1rem;border-bottom:1px solid #eee;text-align:left;}
+th{background:#ffbe0b;color:#222;font-weight:bold;}
+tr:last-child td{border-bottom:none;}

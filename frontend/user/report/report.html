@@ -1,0 +1,47 @@
+<!-- Report HTML -->
+<!-- src/user/report.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Report an Issue — CivicSolve</title>
+  <link rel="stylesheet" href="report.css">
+</head>
+<body>
+  <nav>
+    <span>CivicSolve</span>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="history.html">My Reports</a>
+    <a href="profile.html">Profile</a>
+  </nav>
+  <section class="report-form">
+    <h1>Report a New Issue</h1>
+    <form id="issueForm">
+      <label>Issue Type:
+        <select required>
+          <option value="">Select</option>
+          <option>Pothole</option>
+          <option>Broken Streetlight</option>
+          <option>Illegal Dumping</option>
+          <option>Trash Overflow</option>
+          <option>Other</option>
+        </select>
+      </label>
+      <label>Description:
+        <textarea required maxlength="200"></textarea>
+      </label>
+      <label>
+        Capture/Upload Image:
+        <input type="file" accept="image/*" capture="environment" id="imgInput">
+      </label>
+      <div id="imgPreview"></div>
+      <label>
+        Auto-Location: <span id="geoLocation">Detecting...</span>
+      </label>
+      <button type="submit">Submit Issue</button>
+    </form>
+    <div id="confirmation"></div>
+  </section>
+  <script src="report.js"></script>
+</body>
+</html>
