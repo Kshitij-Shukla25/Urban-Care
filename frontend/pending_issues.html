@@ -1,1 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanCare - Pending Issues</title>
+    <link rel="stylesheet" href="pending.css">
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">UrbanCare Admin</div>
+            <nav class="nav-links">
+                <ul>
+                    <li><a href="index.html">Dashboard</a></li>
+                    <li><a href="#" class="active-link">Pending Issues</a></li>
+                    <li><a href="#">Resolved Issues</a></li>
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="#">Reports</a></li>
+                </ul>
+            </nav>
+            <div class="user-actions">
+                <a href="#" class="icon-bell">🔔</a>
+                <a href="#" class="sign-in">Admin Name</a>
+                <button class="get-started">Logout</button>
+            </div>
+        </div>
+    </header>
 
+    <main class="pending-page-content">
+        <div class="container">
+            <h2>🚨 Top Priority Issues (Sorted by Upvotes)</h2>
+            <div class="issue-grid">
+                
+                <div class="issue-list-column">
+                    <div class="list-header">
+                        <input type="text" placeholder="Search by ID or Keyword..." class="search-input">
+                        <select>
+                            <option>Sort By: Upvotes (High)</option>
+                            <option>Sort By: Date (Newest)</option>
+                        </select>
+                    </div>
+
+                    <div class="priority-issue-card high-priority" data-lat="28.6139" data-lng="77.2090">
+                        <div class="issue-image-wrapper">
+                            <div class="issue-image-placeholder" style="background-image: url('https://source.unsplash.com/150x100/?water-leak,pothole');"></div>
+                        </div>
+                        <div class="issue-text-content">
+                            <div class="votes-badge">⬆️ 1,250</div>
+                            <h4>Critical Water Pipeline Burst - Connaught Place</h4>
+                            <p class="issue-meta">Location: Radial Road 2, New Delhi | Reported: 2h ago</p>
+                            <button class="btn resolve-btn">Assign Task</button>
+                            <button class="btn view-map-btn">View Map</button>
+                        </div>
+                    </div>
+
+                    <div class="priority-issue-card medium-priority" data-lat="19.0760" data-lng="72.8777">
+                        <div class="issue-image-wrapper">
+                            <div class="issue-image-placeholder" style="background-image: url('https://source.unsplash.com/150x100/?traffic-light,broken');"></div>
+                        </div>
+                        <div class="issue-text-content">
+                            <div class="votes-badge">⬆️ 480</div>
+                            <h4>Broken Traffic Signal - Bandra Kurla Complex (BKC)</h4>
+                            <p class="issue-meta">Location: Near Jio World Centre, Mumbai | Reported: 1 day ago</p>
+                            <button class="btn resolve-btn">Assign Task</button>
+                            <button class="btn view-map-btn">View Map</button>
+                        </div>
+                    </div>
+                    
+                    <div class="priority-issue-card low-priority" data-lat="12.9716" data-lng="77.5946">
+                        <div class="issue-image-wrapper">
+                            <div class="issue-image-placeholder" style="background-image: url('https://source.unsplash.com/150x100/?graffiti,wall');"></div>
+                        </div>
+                        <div class="issue-text-content">
+                            <div class="votes-badge">⬆️ 85</div>
+                            <h4>Illegal Dumping near Lalbagh Garden</h4>
+                            <p class="issue-meta">Location: Sudhama Nagar, Bangalore | Reported: 5 days ago</p>
+                            <button class="btn resolve-btn">Assign Task</button>
+                            <button class="btn view-map-btn">View Map</button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="issue-details-column">
+                    <h3>Issue Details & Map View</h3>
+                    <div id="detail-map" style="height: 350px; width: 100%;"></div>
+                    
+                    <div class="details-panel">
+                        <h4>Critical Water Pipeline Burst - Connaught Place</h4>
+                        <p class="detail-status">Status: Pending | **Priority: High**</p>
+                        <p>A major water pipeline burst near the Outer Circle is flooding the road and causing major traffic disruption. The area needs immediate blockage and repair.</p>
+                        
+                        <div class="comments-section">
+                            <h5>💬 Comments (48)</h5>
+                            <div class="comment">
+                                <strong>Delhi Jal Board:</strong> Initial assessment complete. Repair team dispatched immediately. ETA 30 mins.
+                            </div>
+                            <div class="comment user-comment">
+                                <strong>Resident (Ravi S.):</strong> The water is knee-deep near the metro entrance! Please hurry.
+                            </div>
+                        </div>
+                        <textarea placeholder="Add internal admin comment..."></textarea>
+                        <button class="btn primary-btn" style="width: 100%; margin-top: 10px;">Post Comment & Update Status</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 UrbanCare. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20n6a32H62+4wI4sXhQd9hYf8u8e34B7yT8tXqjD4p4="
+     crossorigin=""></script>
+    <script>
+        // Set Default View to India (New Delhi)
+        var defaultLat = 28.6139;
+        var defaultLng = 77.2090;
+        
+        // Map Initialization for the Detail View
+        var detailMap = L.map('detail-map').setView([defaultLat, defaultLng], 12); 
+        
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(detailMap);
+
+        // Marker variable to update location dynamically
+        var currentMarker = L.marker([defaultLat, defaultLng]).addTo(detailMap)
+             .bindPopup("Default Map View: Critical Water Pipeline Burst").openPopup();
+
+        // Function to update map on issue card click
+        document.querySelectorAll('.priority-issue-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const lat = parseFloat(this.getAttribute('data-lat'));
+                const lng = parseFloat(this.getAttribute('data-lng'));
+                const issueTitle = this.querySelector('h4').textContent;
+
+                // Update map view and marker
+                detailMap.setView([lat, lng], 15); 
+                currentMarker.remove();
+                currentMarker = L.marker([lat, lng]).addTo(detailMap)
+                    .bindPopup(issueTitle).openPopup();
+                
+                // --- CONCEPTUAL: UPDATE DETAILS PANEL ---
+                document.querySelector('.details-panel h4').textContent = issueTitle;
+                // In a real app, use an API call to load full details/comments here
+            });
+        });
+    </script>
+</body>
+</html>
